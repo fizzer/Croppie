@@ -1,5 +1,5 @@
 {
-  "name": "croppie",
+  "name": "@fizzer/croppie",
   "version": "2.6.5",
   "description": "A simple javascript image cropper",
   "main": "croppie.js",
