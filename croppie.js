@@ -2,7 +2,7 @@
  * Croppie
  * Copyright 2019
  * Foliotek
- * Version: 2.6.7
+ * Version: 2.6.8
  *************************/
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -1482,7 +1482,7 @@
 
         self._originalImageWidth = canvas.width;
         self._originalImageHeight = canvas.height;
-        _updateCenterPoint.call(self, true);
+        _centerImage.call(self, true);
         _updateZoomLimits.call(self);
     }
 
