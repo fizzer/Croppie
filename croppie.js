@@ -2,7 +2,7 @@
  * Croppie
  * Copyright 2019
  * Foliotek
- * Version: 2.6.6
+ * Version: 2.6.7
  *************************/
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -1471,10 +1471,6 @@
 
         self.data.orientation = getExifOffset(self.data.orientation, deg);
         drawCanvas(canvas, self.elements.img, self.data.orientation);
-        self._originalImageWidth = canvas.width;
-        self._originalImageHeight = canvas.height;
-        _updateCenterPoint.call(self, true);
-        _updateZoomLimits.call(self);
 
         // Reverses image dimensions if the degrees of rotation is not divisible by 180.
         if ((Math.abs(deg) / 90) % 2 === 1) {
@@ -1483,6 +1479,11 @@
             self._originalImageWidth = oldHeight;
             self._originalImageHeight = oldWidth;
         }
+
+        self._originalImageWidth = canvas.width;
+        self._originalImageHeight = canvas.height;
+        _updateCenterPoint.call(self, true);
+        _updateZoomLimits.call(self);
     }
 
     function _destroy() {
